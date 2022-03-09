@@ -1,3 +1,11 @@
+:root {
+    --tufts-blue:#3c91e6ff;
+    --black-coffee:#342e37ff;
+    --sheen-green:#a2d729ff;
+    --baby-powder:#fafffdff;
+    --mango-tango:#fa824cff;
+}
+
 html {
     box-sizing: border-box;
 }
