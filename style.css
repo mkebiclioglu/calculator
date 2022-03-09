@@ -124,6 +124,15 @@ body {
     background: var(--black-coffee);
 }
 
+.delete-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: auto;
+    fill: white;
+}
+
 .btn--operator {
     background: var(--sheen-green);
     color: black;
