@@ -154,7 +154,7 @@ body {
     gap: 1rem;
 }
 
-.github-icon-wrapper {
+.github-icon-wrapper a {
     width: 3rem;
     display: flex;
     justify-content: center;
