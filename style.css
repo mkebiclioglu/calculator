@@ -4,6 +4,8 @@
     --sheen-green:#a2d729ff;
     --baby-powder:#fafffdff;
     --mango-tango:#fa824cff;
+
+    --border-round: 1rem;
 }
 
 html {
@@ -24,6 +26,7 @@ body {
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
+    background: var(--mango-tango);
 }
 
 .container {
@@ -35,6 +38,9 @@ body {
 
 .calculator-container {
     border: 1px solid orangered;
+    background: var(--baby-powder);
+    border-radius: var(--border-round);
+    overflow: hidden;
 }
 
 .calculator {
@@ -45,17 +51,29 @@ body {
     flex-flow: column nowrap;
     justify-content: space-evenly;
     align-items: center;
+    background: var(--baby-powder);
 }
 
 .display {
     width: 100%;
+    height: 10rem;
     padding: .5rem 1rem .5rem 0;
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-end;
-    margin: 0 auto;
+    justify-content: space-evenly;
+    border: 1px solid black;
+    background: white;
+    border-radius: var(--border-round);
+}
 
-    border: 1px solid orangered;
+.display__agg {
+    font-size: 2rem;
+    color: rgba(0, 0, 0, 0.623);
+}
+
+.display__numbers {
+    font-size: 5rem;
 }
 
 .buttons-container-wrapper {
@@ -63,6 +81,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: var(--baby-powder);
 }
 
 .buttons-container {
@@ -79,18 +98,22 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 5rem;
-    width: 5rem;
-
-    border: 1px solid orangered;
+    height: 7rem;
+    width: 7rem;
+    color: white;
+    font-size: 4rem;
+    font-weight: 700;
+    background: var(--tufts-blue);
+    border-radius: var(--border-round);
 }
 
 .btn--system {
-
+    background: var(--black-coffee);
 }
 
 .btn--operator {
-
+    background: var(--sheen-green);
+    color: black;
 }
 
 .btn--wide {
@@ -103,4 +126,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
+    font-size: 3rem;
 }
