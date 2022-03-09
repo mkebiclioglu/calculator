@@ -142,4 +142,13 @@ body {
     color: white;
     font-size: 3rem;
     font-family: var(--default-font);
+    gap: 1rem;
+}
+
+.github-icon-wrapper {
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: white;
 }
