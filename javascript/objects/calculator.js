@@ -4,3 +4,5 @@ const Calculator = () => {
     this.firstEntry = 0;
     this.secondEntry = 0;
 }
+
+export default Calculator;
