@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
 
 [...numBtns]
     .map(elem => elem.addEventListener('click', (e) => {
-        calc.updateDisplay(e);
+        calc.addToDisplay(e);
         numDisplay.innerText = calc.display;
         aggDisplay.innerText = calc.aggregate;
     }));
