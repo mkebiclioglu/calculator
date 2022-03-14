@@ -11,6 +11,34 @@ function Calculator() {
             this.display += e.target.dataset.btn;
         }
     };
+
+    this.removeFromDisplay = function() {
+        if (this.display == '0') {
+            return;
+        } else if (this.display.length > 1) {
+            this.display = this.display
+                .split('')
+                .slice(0,this.display.length-1)
+                .join('');
+        } else if (this.display.length == 1) {
+            this.display = '0';
+        }
+    };
+
+    this.doSystemAction = function(e) {
+        const sysBtnData = e.currentTarget.dataset.btn;
+        console.log(e.currentTarget);
+        if (sysBtnData == 'reset') {
+
+        } else if (sysBtnData == 'clear') {
+
+        } else if (sysBtnData == 'delete') {
+            this.removeFromDisplay();
+        }
+        if (e.currentTarget.classList.contains('btn')) {
+            e.stopPropagation();
+        }
+    };
 }
 
 export default Calculator;

@@ -136,6 +136,10 @@ body {
     fill: white;
 }
 
+svg {
+    pointer-events: none;
+}
+
 .btn--operator {
     background: var(--sheen-green);
     color: black;
