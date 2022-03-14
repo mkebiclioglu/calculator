@@ -7,9 +7,16 @@ function Calculator() {
     this.addToDisplay = function(e) {
         if (this.display == '0') {
             this.display = e.target.dataset.btn;
-        } else if (this.display != '0') {
+        } else if (this.display.length > 7) {
+            return;
+        }
+        else if (this.display != '0') {
             this.display += e.target.dataset.btn;
         }
+
+        // To add
+        // Cant start with leading dots
+        // Cant contain multiple dots.
     };
 
     this.removeFromDisplay = function() {
