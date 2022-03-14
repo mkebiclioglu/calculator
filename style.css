@@ -32,6 +32,11 @@ body {
     background: var(--mango-tango);
 }
 
+svg {
+    pointer-events: none;
+}
+
+
 .container {
     height: 90vh;
     display: flex;
@@ -134,10 +139,6 @@ body {
     width: 70%;
     height: auto;
     fill: white;
-}
-
-svg {
-    pointer-events: none;
 }
 
 .btn--operator {
