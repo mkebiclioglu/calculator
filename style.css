@@ -118,6 +118,7 @@ svg {
     font-weight: 700;
     border-radius: var(--border-round);
     font-family: var(--default-font);
+    cursor: pointer;
 }
 
 .btn:hover {
