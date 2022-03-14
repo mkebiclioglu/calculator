@@ -25,13 +25,16 @@ function Calculator() {
         }
     };
 
+    this.clearDisplay = function() {
+        this.display = '0';
+    }
+
     this.doSystemAction = function(e) {
         const sysBtnData = e.currentTarget.dataset.btn;
-        console.log(e.currentTarget);
         if (sysBtnData == 'reset') {
 
         } else if (sysBtnData == 'clear') {
-
+            this.clearDisplay();
         } else if (sysBtnData == 'delete') {
             this.removeFromDisplay();
         }
