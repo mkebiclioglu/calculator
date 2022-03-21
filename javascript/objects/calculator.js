@@ -1,3 +1,7 @@
+import { 
+    isDuplicate,
+} from '../functions.js'
+
 function Calculator() {
     this.display = '0';
     this.aggregate = '0';
@@ -5,18 +9,14 @@ function Calculator() {
     this.secondEntry = 0;
 
     this.addToDisplay = function(e) {
-        if (this.display == '0') {
-            this.display = e.target.dataset.btn;
-        } else if (this.display.length > 7) {
-            return;
+        let btnVal = e.target.dataset.btn;
+        if ((btnVal == '.' && isDuplicate('.', this.display)) || this.display.length > 7) {
+            return
+        } else if (this.display == '0' && btnVal != '.') {
+            this.display = btnVal;
+        } else if (this.display != '0') {
+            this.display += btnVal;
         }
-        else if (this.display != '0') {
-            this.display += e.target.dataset.btn;
-        }
-
-        // To add
-        // Cant start with leading dots
-        // Cant contain multiple dots.
     };
 
     this.removeFromDisplay = function() {
