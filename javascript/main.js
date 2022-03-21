@@ -30,3 +30,10 @@ window.addEventListener('load', () => {
     }, {
         capture: false
     }));
+
+[...opBtns]
+    .map(elem => elem.addEventListener('click', (e) => {
+
+    }, {
+        capture: false
+    }));
