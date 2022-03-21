@@ -36,10 +36,17 @@ function Calculator() {
         this.display = '0';
     }
 
+    this.clearMemory = function() {
+        this.display = '0';
+        this.aggregate = '0';
+        this.firstEntry = 0;
+        this.secondEntry = 0;
+    }
+
     this.doSystemAction = function(e) {
         const sysBtnData = e.currentTarget.dataset.btn;
         if (sysBtnData == 'reset') {
-
+            this.clearMemory();
         } else if (sysBtnData == 'clear') {
             this.clearDisplay();
         } else if (sysBtnData == 'delete') {
