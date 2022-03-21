@@ -1,7 +1,10 @@
 import { 
     isDuplicate, 
     roundedResult,
-} from '../functions.js'
+} from '../functions.js';
+import { 
+    RESULT_LEN,
+ } from '../constants.js';
 
 function Calculator() {
     this.display = '0';
@@ -13,7 +16,7 @@ function Calculator() {
     // Fix numbers ending with '.'
     this.addToDisplay = function(e) {
         let btnVal = e.target.dataset.btn;
-        if ((btnVal == '.' && isDuplicate('.', this.display)) || this.display.length > 7) {
+        if ((btnVal == '.' && isDuplicate('.', this.display)) || this.display.length > RESULT_LEN) {
             return;
         } else if (this.display == '0' && btnVal != '.') {
             this.display = btnVal;
