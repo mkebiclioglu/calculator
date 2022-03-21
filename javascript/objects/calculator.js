@@ -1,5 +1,6 @@
 import { 
-    isDuplicate,
+    isDuplicate, 
+    roundedResult,
 } from '../functions.js'
 
 function Calculator() {
@@ -91,11 +92,13 @@ function Calculator() {
                     result = (this.firstEntry / this.secondEntry).toString();
                     break;
             }
+            this.display = roundedResult(result);
             this.aggregate = '0';
             this.firstEntry = undefined;
             this.secondEntry = undefined;
             this.operation = undefined;
         }
+        console.table(this);
     };
 }
 
