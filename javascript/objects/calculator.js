@@ -10,6 +10,7 @@ function Calculator() {
     this.secondEntry = undefined;
     this.operation = undefined;
 
+    // Fix numbers ending with '.'
     this.addToDisplay = function(e) {
         let btnVal = e.target.dataset.btn;
         if ((btnVal == '.' && isDuplicate('.', this.display)) || this.display.length > 7) {
