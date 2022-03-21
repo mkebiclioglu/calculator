@@ -29,10 +29,7 @@ function Calculator() {
         if (this.display == '0') {
             return;
         } else if (this.display.length > 1) {
-            this.display = this.display
-                .split('')
-                .slice(0,this.display.length-1)
-                .join('');
+            this.display = this.display.substring(0, this.display.length - 1);
         } else if (this.display.length == 1) {
             this.display = '0';
         }
