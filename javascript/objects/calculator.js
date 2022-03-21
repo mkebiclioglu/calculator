@@ -75,19 +75,20 @@ function Calculator() {
     };
 
     this.doOperation = function(e) {
+        let result = 0;
         if (this.firstEntry != undefined && this.secondEntry != undefined && this.operation != undefined) {
             switch (this.operation) {
                 case 'add':
-                    this.display = (this.firstEntry + this.secondEntry).toString();
+                    result = (this.firstEntry + this.secondEntry).toString();
                     break;
                 case 'subtract':
-                    this.display = (this.firstEntry - this.secondEntry).toString();
+                    result = (this.firstEntry - this.secondEntry).toString();
                     break;
                 case 'multiply':
-                    this.display = (this.firstEntry * this.secondEntry).toString();
+                    result = (this.firstEntry * this.secondEntry).toString();
                     break;
                 case 'divide':
-                    this.display = (this.firstEntry / this.secondEntry).toString();
+                    result = (this.firstEntry / this.secondEntry).toString();
                     break;
             }
             this.aggregate = '0';
@@ -95,7 +96,6 @@ function Calculator() {
             this.secondEntry = undefined;
             this.operation = undefined;
         }
-        console.table(this);
     };
 }
 
