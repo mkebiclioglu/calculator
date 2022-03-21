@@ -5,8 +5,9 @@ import {
 function Calculator() {
     this.display = '0';
     this.aggregate = '0';
-    this.firstEntry = 0;
-    this.secondEntry = 0;
+    this.firstEntry = undefined;
+    this.secondEntry = undefined;
+    this.operation = undefined;
 
     this.addToDisplay = function(e) {
         let btnVal = e.target.dataset.btn;
@@ -39,8 +40,24 @@ function Calculator() {
     this.clearMemory = function() {
         this.display = '0';
         this.aggregate = '0';
-        this.firstEntry = 0;
-        this.secondEntry = 0;
+        this.firstEntry = undefined;
+        this.secondEntry = undefined;
+    };
+
+    this.setOperation = function(e) {
+        if (e.currentTarget.dataset.btn != 'equal') {
+            this.operation = e.currentTarget.dataset.btn;
+        }
+    };
+    
+    this.doScreenMoves = function() {
+        if (this.firstEntry == undefined && this.display != '0') {
+            this.firstEntry = +this.display;
+            this.aggregate = this.display;
+            this.display = '0';
+        } else if (this.secondEntry == undefined && this.display != '0') {
+            this.secondEntry = +this.display;
+        }
     };
 
     this.doSystemAction = function(e) {
@@ -55,6 +72,30 @@ function Calculator() {
         if (e.currentTarget.classList.contains('btn')) {
             e.stopPropagation();
         }
+    };
+
+    this.doOperation = function(e) {
+        if (this.firstEntry != undefined && this.secondEntry != undefined && this.operation != undefined) {
+            switch (this.operation) {
+                case 'add':
+                    this.display = (this.firstEntry + this.secondEntry).toString();
+                    break;
+                case 'subtract':
+                    this.display = (this.firstEntry - this.secondEntry).toString();
+                    break;
+                case 'multiply':
+                    this.display = (this.firstEntry * this.secondEntry).toString();
+                    break;
+                case 'divide':
+                    this.display = (this.firstEntry / this.secondEntry).toString();
+                    break;
+            }
+            this.aggregate = '0';
+            this.firstEntry = undefined;
+            this.secondEntry = undefined;
+            this.operation = undefined;
+        }
+        console.table(this);
     };
 }
 

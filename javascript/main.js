@@ -33,7 +33,11 @@ window.addEventListener('load', () => {
 
 [...opBtns]
     .map(elem => elem.addEventListener('click', (e) => {
-
+        calc.doScreenMoves();
+        calc.setOperation(e);
+        calc.doOperation(e);
+        numDisplay.innerText = calc.display;
+        aggDisplay.innerText = calc.aggregate;
     }, {
         capture: false
     }));
