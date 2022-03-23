@@ -7,9 +7,13 @@ export const isDuplicate = (searchTerm, target) => {
     return letters.includes(searchTerm);
 };
 
-// Fix issue resulting in numbers ending with '.'.
 export const roundedResult = (result) => {
     if (result.length > RESULT_LEN && result.indexOf('.') != -1) {
+        if (result.substring(0,RESULT_LEN + 1).slice(-1) == '.') {
+            return Math.round(+result)
+                .toString()
+                .substring(0,RESULT_LEN + 1);
+        }
         return result.substring(0,RESULT_LEN + 1);
     } else if (result.length > RESULT_LEN) {
         return expo(result, 2).toString();
