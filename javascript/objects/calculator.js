@@ -55,7 +55,11 @@ function Calculator() {
     this.doScreenMoves = function() {
         if (this.firstEntry == undefined && this.display != '0') {
             this.firstEntry = +this.display;
-            this.aggregate = this.display;
+            if (this.display.slice(-1) == '.') {
+                this.aggregate = this.display.concat('','0');
+            } else {
+                this.aggregate = this.display;
+            }
             this.display = '0';
         } else if (this.secondEntry == undefined && this.display != '0') {
             this.secondEntry = +this.display;
