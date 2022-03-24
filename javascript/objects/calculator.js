@@ -1,5 +1,4 @@
 import { 
-    isDuplicate, 
     roundedResult,
 } from '../functions.js';
 import { 
@@ -13,10 +12,9 @@ function Calculator() {
     this.secondEntry = undefined;
     this.operation = undefined;
 
-    // Fix numbers ending with '.'
     this.addToDisplay = function(e) {
         let btnVal = e.target.dataset.btn;
-        if ((btnVal == '.' && isDuplicate('.', this.display)) || this.display.length > RESULT_LEN) {
+        if ((btnVal == '.' && this.display.indexOf('.') != -1) || this.display.length > RESULT_LEN) {
             return;
         } else if (this.display == '0' && btnVal != '.') {
             this.display = btnVal;
